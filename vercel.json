@@ -14,6 +14,9 @@
       "maxDuration": 120,
       "includeFiles": "Protocol/**"
     },
+    "api/linedrawing.ts": {
+      "maxDuration": 120
+    },
     "api/stream.ts": {
       "maxDuration": 10
     }
