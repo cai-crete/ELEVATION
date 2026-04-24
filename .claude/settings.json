@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/크리트/Downloads/ELEVATION/**)",
+      "Read(//c/Users/크리트/Downloads/ELEVATION//**)",
+      "Bash(npm install:*)",
+      "WebFetch(domain:cai-sketch-to-image-v2.vercel.app)",
+      "Bash(curl -s \"https://cai-sketch-to-image-v2.vercel.app/\")",
+      "Bash(curl -s \"https://cai-sketch-to-image-v2.vercel.app/_next/static/css/46e0b4597eca3cef.css\")",
+      "Bash(curl -s \"https://cai-sketch-to-image-v2.vercel.app/_next/static/chunks/app/page-83c12c4d3f59cb9e.js\")",
+      "Bash(npx tsc:*)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\크리트\\Downloads\\ELEVATION",
+      "C:\\Users\\크리트\\Downloads\\ELEVATION\\exec-plan"
+    ]
+  }
+}

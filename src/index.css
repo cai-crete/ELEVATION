@@ -1,0 +1,60 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Pretendard", "Inter", system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-display: "Bebas Neue", "Anton", "Outfit", ui-sans-serif, system-ui, sans-serif;
+
+  --color-black: #000;
+  --color-white: #fff;
+  --color-gray-200: oklch(92.8% .006 264.531);
+  --color-gray-400: oklch(70.7% .022 261.325);
+  --color-gray-600: oklch(44.6% .03 256.802);
+  --color-neutral-400: oklch(70.8% 0 0);
+  --color-neutral-600: oklch(43.9% 0 0);
+  --color-neutral-800: oklch(26.9% 0 0);
+
+  --radius-md: .375rem;
+  --tracking-tighter: -.05em;
+  --tracking-wide: .025em;
+  --tracking-widest: .1em;
+}
+
+@layer utilities {
+  /* 레퍼런스 사이트 캔버스 그리드 (light) */
+  .canvas-grid-light {
+    background-image:
+      linear-gradient(to right,  rgba(0,0,0,0.14) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,0,0,0.14) 1px, transparent 1px),
+      linear-gradient(to right,  rgba(0,0,0,0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,0,0,0.04) 1px, transparent 1px);
+    background-size: 60px 60px, 60px 60px, 12px 12px, 12px 12px;
+    background-position: center center;
+  }
+  .canvas-grid-dark {
+    background-image:
+      linear-gradient(to right,  rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  color: #000;
+  overflow: hidden;
+  font-family: var(--font-sans);
+  letter-spacing: var(--tracking-wide);
+  line-height: 1.5;
+}

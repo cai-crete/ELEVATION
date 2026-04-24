@@ -1,0 +1,6 @@
+{
+  "name": "CAI Canvas Deterministic BIM Compiler",
+  "description": "AI Deterministic BIM Compiler: Image to Elevation v7. Generates 5-view orthographic projections from a single 2D architectural image.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
