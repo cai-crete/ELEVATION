@@ -2,9 +2,20 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "functions": {
+    "api/analyze.ts": {
+      "maxDuration": 120,
+      "includeFiles": "Protocol/**"
+    },
+    "api/generate.ts": {
+      "maxDuration": 120,
+      "includeFiles": "Protocol/**"
+    },
     "api/process.ts": {
       "maxDuration": 120,
       "includeFiles": "Protocol/**"
+    },
+    "api/stream.ts": {
+      "maxDuration": 10
     }
   },
   "rewrites": [
