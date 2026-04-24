@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
   "builds": [
     {
       "src": "api/**/*.ts",
       "use": "@vercel/node",
-      "config": { "includeFiles": ["Protocol/**"] }
+      "config": {
+        "includeFiles": ["Protocol/**"],
+        "maxDuration": 120
+      }
     }
   ],
   "routes": [
@@ -18,15 +19,6 @@
         "Access-Control-Allow-Headers": "Content-Type, Authorization"
       },
       "dest": "/api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
     }
-  ],
-  "functions": {
-    "api/process.ts": {
-      "maxDuration": 120
-    }
-  }
+  ]
 }
