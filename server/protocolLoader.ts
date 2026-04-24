@@ -4,11 +4,9 @@
  * 하드코딩 없이 파일 참조로만 동작합니다.
  */
 import { readFile } from 'fs/promises';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { join } from 'path';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const PROTOCOL_DIR = join(__dirname, '..', 'Protocol');
+const PROTOCOL_DIR = join(process.cwd(), 'Protocol');
 
 /** Protocol 폴더의 파일을 읽어 문자열로 반환 */
 const loadFile = async (filename: string): Promise<string> => {
