@@ -10,8 +10,8 @@ import { log, logError } from '../logger.js';
 import type { AEPLSchema } from '../../src/types.js';
 
 const API_KEY       = process.env.GEMINI_API_KEY!;
-const PRIMARY_MODEL = process.env.ANALYSIS_MODEL   ?? 'gemini-2.5-pro';
-const FALLBACK_MODEL= process.env.ANALYSIS_FALLBACK ?? 'gemini-1.5-pro';
+const PRIMARY_MODEL = process.env.ANALYSIS_MODEL   ?? 'gemini-3-pro-preview';
+const FALLBACK_MODEL= process.env.ANALYSIS_FALLBACK ?? 'gemini-2.5-pro';
 
 if (!API_KEY) throw new Error('GEMINI_API_KEY is not set in environment.');
 

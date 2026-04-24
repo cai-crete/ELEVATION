@@ -15,8 +15,8 @@ import { log, logError } from '../logger.js';
 import type { AEPLSchema, GeneratedImages } from '../../src/types.js';
 
 const API_KEY         = process.env.GEMINI_API_KEY!;
-const GEN_MODEL       = process.env.GENERATION_MODEL   ?? 'gemini-2.0-flash-exp-image-generation';
-const GEN_FALLBACK    = process.env.GENERATION_FALLBACK ?? 'gemini-2.0-flash-exp';
+const GEN_MODEL       = process.env.GENERATION_MODEL   ?? 'gemini-3-pro-image-preview';
+const GEN_FALLBACK    = process.env.GENERATION_FALLBACK ?? 'gemini-2.0-flash-exp-image-generation';
 
 const genAI = new GoogleGenerativeAI(API_KEY);
 
