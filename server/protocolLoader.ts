@@ -2,11 +2,27 @@
  * server/protocolLoader.ts
  * Protocol 폴더의 txt 파일을 동적으로 읽어 시스템 프롬프트를 조립합니다.
  * 하드코딩 없이 파일 참조로만 동작합니다.
+ *
+ * 경로 탐색 우선순위 (로컬 + Vercel 서버리스 양쪽 대응):
+ *   1. process.cwd()/Protocol         — Vercel /var/task/Protocol
+ *   2. __dirname/../Protocol           — 로컬 server/../Protocol
+ *   3. __dirname/Protocol              — 번들 파일과 같은 디렉터리
  */
 import { readFile } from 'fs/promises';
-import { join } from 'path';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+import { existsSync } from 'fs';
 
-const PROTOCOL_DIR = join(process.cwd(), 'Protocol');
+const __mod_dir = dirname(fileURLToPath(import.meta.url));
+
+const PROTOCOL_DIR = (() => {
+  const candidates = [
+    join(process.cwd(), 'Protocol'),        // Vercel: /var/task/Protocol
+    join(__mod_dir, '..', 'Protocol'),       // 로컬: server/../Protocol
+    join(__mod_dir, 'Protocol'),             // 번들: 같은 디렉터리/Protocol
+  ];
+  return candidates.find(existsSync) ?? candidates[0];
+})();
 
 /** Protocol 폴더의 파일을 읽어 문자열로 반환 */
 const loadFile = async (filename: string): Promise<string> => {
