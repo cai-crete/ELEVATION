@@ -4,7 +4,7 @@
   "functions": {
     "api/process.ts": {
       "maxDuration": 120,
-      "includeFiles": ["Protocol/**"]
+      "includeFiles": "Protocol/**"
     }
   },
   "rewrites": [
